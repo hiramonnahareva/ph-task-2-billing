@@ -6,21 +6,23 @@ import Table from '../Component/Table';
 
 const Dashbord = () => {
     return (
-        <div className='mx-5'>
+        <div >
             <Header/>
-            <section className='d-flex justify-content-between m-5 align-items-center'> 
-        <div class="d-flex w-50">
+            <div className='container-lg'>
+            <section className='d-flex justify-content-between my-5 align-items-center'> 
+        <div className="d-flex w-50">
             <h2 className='me-5'>Billing</h2>
-            <input id="input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+            <input id="input" className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
           </div>
         
-        <div class="">
+        <div className="">
         <AddBtn/>
           </div>
              
         </section>
         <Table/>
         <Pagenation/>
+        </div>
         </div>
     );
 };

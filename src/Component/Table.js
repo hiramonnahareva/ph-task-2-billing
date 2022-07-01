@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import UseBillList from '../UseBillList';
 import SingleData from './SingleData';
 
 const Table = () => {
-    const [data, setData] = useState([])
-    useEffect(()=> {
-        fetch('data.json')
-        .then(res => res.json())
-        .then(data => setData(data))
-    }, [])
+    const [billList, setBillList] = UseBillList();
     return (
        <div>
-        <table class="table table-bordered border-dark">
+        <table className="table table-bordered border-dark">
             
   <thead>
     <tr>
@@ -24,7 +20,7 @@ const Table = () => {
   </thead>
   <tbody>
     {
-        data.map(singleData => <SingleData singleData={singleData}></SingleData> )
+        billList.map(singleData => <SingleData  key={singleData._id} singleData={singleData}></SingleData> )
     }
   </tbody>
 </table>

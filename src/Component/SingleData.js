@@ -1,20 +1,21 @@
 import React from 'react';
+import DeleteBtn from './DeleteBtn';
 
-const SingleData = ({singleData}) => {
-    const {name, email, phone, PaidAmount} = singleData;
+const SingleData = ({ singleData }) => {
+    const { _id, name, email, phone, PaidAmount } = singleData;
     return (
-            <tr>
-      <th scope="row">1</th>
-      <td>{name}</td>
-      <td>{email}</td>
-      <td>{phone}</td>
-      <td>{PaidAmount}</td>
-      <td>
-        <button type="button" class="btn btn-outline-secondary me-4">Edit</button>
-        <button type="button" class="btn btn-outline-danger">Delete</button>
-        </td>
-    </tr>
-       
+        <tr>
+            <th scope="row">{_id}</th>
+            <td>{name}</td>
+            <td>{email}</td>
+            <td>{phone}</td>
+            <td>{PaidAmount}</td>
+            <td>
+                <button type="button" className="btn btn-outline-secondary me-4">Edit</button>
+                <DeleteBtn id={_id} />
+            </td>
+        </tr>
+
     );
 };
 
